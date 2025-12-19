@@ -9,7 +9,7 @@ class AIService
 
     public function __construct($apiKey = null, $apiUrl = null, $model = null, $timeout = 60)
     {
-        $this->apiKey = $apiKey ?: getenv('AI_API_KEY') ?: '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';
+        $this->apiKey = $apiKey ?: getenv('AI_API_KEY') ?: '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';
         $this->apiUrl = $apiUrl ?: getenv('AI_API_URL') ?: 'https://openrouter.ai/api/v1/chat/completions';
         $this->model = $model ?: getenv('AI_MODEL') ?: 'nvidia/nemotron-3-nano-30b-a3b:free';
         $this->timeout = $timeout;

@@ -92,7 +92,10 @@ const CodeEditorSection: React.FC<CodeEditorSectionProps> = ({
                         value={fontSize}
                         onChange={(e) => onFontSizeChange(Number(e.target.value))}
                         className="setting-select"
-                    >
+                    >             
+                        <option value="8">8</option>              
+                        <option value="10">10</option>
+                        <option value="12">12</option>
                         <option value="14">14</option>
                         <option value="16">16</option>
                         <option value="18">18</option>

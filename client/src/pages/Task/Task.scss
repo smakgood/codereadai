@@ -26,22 +26,22 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 1.5rem;
+    padding: 0.6rem 0.9rem;
     background: #FFFFFF;
     border-bottom: 1px solid #808082;
-    gap: 1rem;
+    gap: 0.6rem;
   }
 
   .btn-back-header {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.3rem;
     background: #DFDFDF;
     border: 1px solid #808082;
     color: #1D1D1D;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    font-size: 14px;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4.8px;
+    font-size: 8.4px;
     font-weight: 500;
     font-family: inherit;
     cursor: pointer;
@@ -54,14 +54,14 @@
     }
 
     svg {
-      width: 20px;
-      height: 20px;
+      width: 12px;
+      height: 12px;
     }
   }
 
   .task-title-header {
     flex: 1;
-    font-size: 1.1rem; // Уменьшено с 1.25rem
+    font-size: 0.66rem;
     font-weight: 600;
     margin: 0;
     text-align: center;
@@ -69,57 +69,57 @@
   }
 
   .task-header-spacer {
-    width: 100px; /* Для симметрии с кнопкой */
+    width: 60px; /* Для симметрии с кнопкой */
   }
 
   /* Main Content */
   .task-main {
-    padding: 1rem 1.5rem;
+    padding: 0.6rem 0.9rem;
     overflow-y: auto;
-    height: calc(100vh - 70px);
+    height: calc(100vh - 42px);
   }
 
   .task-container {
-    max-width: 1000px;
+    max-width: 600px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 0.75rem; // Уменьшен зазор между секциями
+    gap: 0.45rem;
   }
 
   /* Task Info Section */
   .task-info-section {
     background: #FFFFFF;
     border: 1px solid #808082;
-    border-radius: 10px;
-    padding: 0.75rem 1.25rem; // Уменьшен вертикальный отступ
+    border-radius: 6px;
+    padding: 0.45rem 0.75rem;
   }
 
   .task-title-section {
-    font-size: 1rem; // Уменьшено с 1.15rem
+    font-size: 0.6rem;
     font-weight: 600;
     color: #1D1D1D;
-    margin: 0 0 0.5rem 0;
+    margin: 0 0 0.3rem 0;
   }
 
   .task-meta {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 0.45rem;
     flex-wrap: wrap;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
   }
 
   .task-id {
-    font-size: 0.8rem; // Уменьшено с 0.875rem
+    font-size: 0.48rem;
     color: #808082;
     font-weight: 500;
   }
 
   .task-difficulty-badge {
-    padding: 0.2rem 0.4rem; // Уменьшен паддинг
-    border-radius: 12px;
-    font-size: 0.625rem; // Уменьшено с 0.6875rem
+    padding: 0.12rem 0.24rem;
+    border-radius: 7.2px;
+    font-size: 0.375rem;
     font-weight: 600;
     color: #FFFFFF;
     text-transform: uppercase;
@@ -127,10 +127,10 @@
   }
 
   .task-language-badge {
-    padding: 0.2rem 0.4rem; // Уменьшен паддинг
+    padding: 0.12rem 0.24rem;
     background: #DFDFDF;
-    border-radius: 12px;
-    font-size: 0.625rem; // Уменьшено с 0.6875rem
+    border-radius: 7.2px;
+    font-size: 0.375rem;
     font-weight: 600;
     color: #1D1D1D;
     text-transform: uppercase;
@@ -138,7 +138,7 @@
   }
 
   .task-description {
-    font-size: 0.9rem; // Уменьшено с 1rem
+    font-size: 0.54rem;
     line-height: 1.4;
     color: #1D1D1D;
     margin: 0;
@@ -148,21 +148,21 @@
   .task-code-section {
     background: #FFFFFF;
     border: 1px solid #808082;
-    border-radius: 10px;
-    padding: 0.75rem 1.25rem;
+    border-radius: 6px;
+    padding: 0.45rem 0.75rem;
   }
 
   .code-section-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 0.5rem; // Уменьшен отступ
+    margin-bottom: 0.3rem;
     flex-wrap: wrap;
-    gap: 0.75rem;
+    gap: 0.45rem;
   }
 
   .section-title {
-    font-size: 0.95rem; // Уменьшено с 1.125rem
+    font-size: 0.57rem;
     font-weight: 600;
     color: #1D1D1D;
     margin: 0;
@@ -170,14 +170,14 @@
 
   .editor-settings {
     display: flex;
-    gap: 0.5rem;
+    gap: 0.3rem;
     align-items: center;
     flex-wrap: wrap;
   }
 
   .setting-select {
-    padding: 0.25rem 0.5rem;
-    font-size: 0.6875rem;
+    padding: 0.15rem 0.3rem;
+    font-size: 0.4125rem;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     background: #DFDFDF;
@@ -201,18 +201,18 @@
 
   .code-editor-wrapper {
     border: 1px solid #808082;
-    border-radius: 8px;
+    border-radius: 4.8px;
     overflow: hidden;
     background: #222222;
 
     pre {
       margin: 0;
       padding: 0;
-      max-height: 280px;
+      max-height: 168px;
       overflow: auto;
       
       code {
-        padding: 0.75rem !important;
+        padding: 0.45rem !important;
         font-family: 'Fira Code', 'Cascadia Code', 'Consolas', monospace;
         line-height: 1.4;
         display: block;
@@ -226,8 +226,8 @@
     background: #FFFFFF;
     border: 1px solid #808082;
     border-radius: 10px;
-    padding: 0.75rem 1.25rem;
-    position: relative; // Добавлено для позиционирования лоадера
+    padding: 0.45rem 0.75rem;
+    position: relative;
 
     .input-wrapper {
       position: relative;
@@ -246,23 +246,23 @@
       align-items: center;
       justify-content: center;
       z-index: 10;
-      border-radius: 8px;
+      border-radius: 4.8px;
       backdrop-filter: blur(2px);
       animation: fadeIn 0.2s ease;
 
       .loader-spinner {
-        width: 40px;
-        height: 40px;
-        border: 3px solid #DFDFDF;
-        border-top: 3px solid #1D1D1D;
+        width: 24px;
+        height: 24px;
+        border: 1.8px solid #DFDFDF;
+        border-top: 1.8px solid #1D1D1D;
         border-radius: 50%;
         animation: spin 1s linear infinite;
-        margin-bottom: 1rem;
+        margin-bottom: 0.6rem;
       }
 
       .loader-text {
         font-weight: 600;
-        font-size: 0.875rem;
+        font-size: 0.525rem;
         color: #1D1D1D;
       }
     }
@@ -279,37 +279,37 @@
       align-items: center;
       justify-content: center;
       z-index: 10;
-      border-radius: 8px;
+      border-radius: 4.8px;
       backdrop-filter: blur(2px);
       animation: fadeIn 0.2s ease;
-      padding: 1rem;
+      padding: 0.6rem;
       text-align: center;
 
       .error-icon {
-        width: 64px;
-        height: 64px;
-        margin-bottom: 0.75rem;
+        width: 38.4px;
+        height: 38.4px;
+        margin-bottom: 0.45rem;
         object-fit: contain;
       }
 
       .error-text {
         font-weight: 600;
-        font-size: 0.875rem;
+        font-size: 0.525rem;
         color: #1D1D1D;
         line-height: 1.4;
-        max-width: 90%;
+        max-width: 54%;
       }
 
       .error-dismiss-btn {
         position: absolute;
-        top: 0.5rem;
-        right: 0.5rem;
+        top: 0.3rem;
+        right: 0.3rem;
         background: transparent;
         border: none;
-        font-size: 1.25rem;
+        font-size: 0.75rem;
         color: #808082;
         cursor: pointer;
-        padding: 0.25rem 0.5rem;
+        padding: 0.15rem 0.3rem;
         line-height: 1;
         transition: color 0.2s ease;
 
@@ -330,28 +330,28 @@
     background: #FFFFFF;
     border: 1px solid #808082;
     border-radius: 10px;
-    padding: 1.25rem;
+    padding: 0.75rem;
     animation: fadeIn 0.3s ease;
 
     .review-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 1.25rem;
+      margin-bottom: 0.75rem;
     }
 
     .review-score-badge {
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
+      padding: 0.3rem 0.6rem;
+      border-radius: 12px;
       color: #FFFFFF;
       font-weight: 700;
-      font-size: 0.875rem;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      font-size: 0.525rem;
+      box-shadow: 0 1.2px 2.4px rgba(0, 0, 0, 0.1);
     }
 
     .review-content {
       .feedback-group {
-        margin-bottom: 1.5rem;
+        margin-bottom: 0.9rem;
         &:last-child {
           margin-bottom: 0;
         }
@@ -359,12 +359,12 @@
 
       .feedback-label {
         font-weight: 600;
-        font-size: 0.875rem;
+        font-size: 0.525rem;
         color: #808082;
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.3rem;
         display: flex;
         align-items: center;
-        gap: 0.5rem;
+        gap: 0.3rem;
 
         &.strengths { color: #4caf50; }
         &.weaknesses { color: #f44336; }
@@ -372,16 +372,16 @@
       }
 
       .feedback-text {
-        font-size: 1rem;
+        font-size: 0.6rem;
         line-height: 1.6;
         color: #1D1D1D;
         background: #f8f9fa;
-        padding: 1rem;
-        border-radius: 8px;
-        border-left: 4px solid #1D1D1D;
+        padding: 0.6rem;
+        border-radius: 4.8px;
+        border-left: 2.4px solid #1D1D1D;
 
         p {
-          margin: 0 0 0.75rem 0;
+          margin: 0 0 0.45rem 0;
           &:last-child {
             margin-bottom: 0;
           }
@@ -390,14 +390,14 @@
 
       .feedback-list {
         margin: 0;
-        padding: 0 0 0 1.25rem;
+        padding: 0 0 0 0.75rem;
         list-style-type: disc;
 
         li {
-          font-size: 0.9375rem;
+          font-size: 0.5625rem;
           line-height: 1.5;
           color: #1D1D1D;
-          margin-bottom: 0.5rem;
+          margin-bottom: 0.3rem;
           &:last-child {
             margin-bottom: 0;
           }
@@ -412,25 +412,25 @@
   }
 
   .section-description {
-    font-size: 0.8rem; // Уменьшено с 0.875rem
+    font-size: 0.48rem;
     color: #808082;
-    margin: 0 0 0.75rem 0;
+    margin: 0 0 0.45rem 0;
     line-height: 1.3;
   }
 
   .user-input-textarea {
     width: 100%;
-    padding: 0.5rem 0.75rem;
-    font-size: 0.8rem; // Уменьшено с 0.875rem
+    padding: 0.3rem 0.45rem;
+    font-size: 0.48rem;
     line-height: 1.4;
     font-family: 'Montserrat', sans-serif;
     background: #DFDFDF;
     border: 1px solid #808082;
-    border-radius: 8px;
+    border-radius: 4.8px;
     color: #1D1D1D;
     resize: vertical;
     outline: none;
-    min-height: 80px;
+    min-height: 48px;
     transition: all 0.2s ease;
 
     &:focus {
@@ -445,18 +445,18 @@
 
   .task-buttons-wrapper {
     display: flex;
-    gap: 1rem;
-    margin-top: 1rem;
+    gap: 0.6rem;
+    margin-top: 0.6rem;
   }
 
   .btn-submit {
     flex: 1;
-    padding: 0.5rem 1rem; // Уменьшено с 0.75rem 1.5rem
+    padding: 0.3rem 0.6rem;
     background: #1D1D1D;
     color: #FFFFFF;
     border: 1px solid #1D1D1D;
-    border-radius: 8px;
-    font-size: 0.8rem; // Уменьшено с 0.875rem
+    border-radius: 4.8px;
+    font-size: 0.48rem;
     font-weight: 600;
     font-family: inherit;
     cursor: pointer;
@@ -465,7 +465,7 @@
 
     &:hover {
       background: #333333;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 1.2px 3.6px rgba(0, 0, 0, 0.1);
     }
 
     &:active {
@@ -476,12 +476,12 @@
 
   .btn-draft {
     flex: 1;
-    padding: 0.5rem 1rem; // Уменьшено с 0.75rem 1.5rem
+    padding: 0.3rem 0.6rem;
     background: transparent;
     color: #1D1D1D;
     border: 1px solid #1D1D1D;
-    border-radius: 8px;
-    font-size: 0.8rem; // Уменьшено с 0.875rem
+    border-radius: 4.8px;
+    font-size: 0.48rem;
     font-weight: 600;
     font-family: inherit;
     cursor: pointer;
@@ -504,24 +504,24 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 50vh;
-    padding: 2rem;
+    min-height: 30vh;
+    padding: 1.2rem;
     text-align: center;
 
     p {
-      font-size: 1.125rem;
+      font-size: 0.675rem;
       color: #808082;
-      margin-bottom: 1.5rem;
+      margin-bottom: 0.9rem;
     }
   }
 
   .btn-back {
-    padding: 0.75rem 1.5rem;
+    padding: 0.45rem 0.9rem;
     background: #1D1D1D;
     color: #FFFFFF;
     border: 1px solid #1D1D1D;
-    border-radius: 8px;
-    font-size: 1rem;
+    border-radius: 4.8px;
+    font-size: 0.6rem;
     font-weight: 600;
     font-family: inherit;
     cursor: pointer;
@@ -535,15 +535,15 @@
   /* Responsive */
   @media (max-width: 768px) {
     .task-header {
-      padding: 0.75rem 1rem;
+      padding: 0.45rem 0.6rem;
     }
 
     .task-title-header {
-      font-size: 1rem;
+      font-size: 0.6rem;
     }
 
     .task-main {
-      padding: 1rem;
+      padding: 0.6rem;
     }
 
     .task-header-spacer {
@@ -551,7 +551,7 @@
     }
 
     .code-editor-wrapper {
-      height: 300px;
+      height: 180px;
     }
   }
 }
