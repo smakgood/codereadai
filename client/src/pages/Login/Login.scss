@@ -1,0 +1,244 @@
+/* Montserrat from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+.main-login {
+  min-height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(40px, 10vh, 120px) 20px;
+  overflow: hidden;
+  background: #ffffff;
+  font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+  color: #1D1D1D;
+
+  @supports (min-height: 100dvh) {
+    min-height: 100dvh;
+  }
+
+  .sign-wrap {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  /* ЛОГОТИП */
+  .brand-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 32px;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+
+  .brand-icon {
+    width: 36px;
+    height: 36px;
+    display: block;
+    object-fit: contain;
+  }
+
+  .brand-text {
+    font-size: 28px;
+    font-weight: 500;
+    color: #1D1D1D;
+    letter-spacing: 0.5px;
+  }
+
+  .sign-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0 0 32px;
+    color: #1D1D1D;
+  }
+
+  .sign-card {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 32px 24px;
+    margin-bottom: 24px;
+  }
+
+  .field {
+    margin-bottom: 20px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  .label {
+    display: block;
+    font-size: 14px;
+    color: #1D1D1D;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+
+  .password-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+
+  .forgot-password {
+    background: none;
+    border: none;
+    color: #666666;
+    font-size: 14px;
+    font-family: inherit;
+    cursor: pointer;
+    padding: 0;
+    text-decoration: underline;
+    transition: color 0.2s ease;
+    font-weight: 500;
+
+    &:hover {
+      color: #1D1D1D;
+    }
+  }
+
+  .input {
+    width: 100%;
+    font-size: 16px;
+    height: 48px;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+    background: #f9f9f9;
+    color: #1D1D1D;
+    padding: 12px 16px;
+    outline: none;
+    font-family: inherit;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+
+    &::placeholder {
+      color: #666666;
+    }
+
+    &:focus {
+      background: #ffffff;
+      border-color: #1D1D1D;
+    }
+  }
+
+  .actions {
+    margin-top: 24px;
+  }
+
+  .btn-primary {
+    width: 100%;
+    height: 48px;
+    border: 1px solid #1D1D1D;
+    border-radius: 6px;
+    background: #1D1D1D;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+    text-transform: none;
+
+    &:hover {
+      background: #333333;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    &:active {
+      transform: translateY(1px);
+      background: #000000;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .foot {
+    text-align: center;
+    font-size: 14px;
+    color: #1D1D1D;
+    font-weight: 400;
+    padding-top: 24px;
+    border-top: 1px solid #e0e0e0;
+  }
+
+  .foot-link {
+    background: none;
+    border: none;
+    color: #1D1D1D;
+    font-size: 14px;
+    font-family: inherit;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 4px;
+    text-decoration: underline;
+    transition: color 0.2s ease;
+    font-weight: 500;
+
+    &:hover {
+      color: #333333;
+    }
+  }
+
+  /* «Глазик» у полей пароля */
+  .password-wrap {
+    position: relative;
+
+    .input {
+      padding-right: 48px;
+    }
+  }
+
+  .toggle-visibility {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    color: #666666;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: #1D1D1D;
+    }
+
+    &:active {
+      transform: translateY(calc(-50% + 1px));
+    }
+
+    svg {
+      display: block;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .sign-title {
+      font-size: 28px;
+    }
+
+    .sign-card {
+      padding: 24px 20px;
+    }
+
+    .brand-logo {
+      margin-bottom: 20px;
+    }
+  }
+}
