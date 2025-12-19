@@ -1,0 +1,54 @@
+@import '../../scss/variables.scss';
+
+$width-wrapper: 500px;
+$height-wrapper: 200px;
+
+.popup {
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &-wrapper {
+        text-align: center;
+        min-width: $width-wrapper;
+        min-height: $height-wrapper;
+        background-color: #181818;
+        border: 1px solid $button-border-color;
+        border-radius: 10px;
+        padding: 0 20px 0 20px;
+    }
+
+    &-text-block {
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+
+    &-title {
+        height: 100px;
+        margin-top: 10px;
+        font-size: 60px;
+        color: #FFC300;
+        background-color: $button-hover-color;
+        -webkit-background-clip: text;
+    }
+
+    &--info-text {
+        font-size: 40px;
+        color: $text-color;
+        background-color: $button-hover-color;
+        -webkit-background-clip: text;
+    }
+
+    & .buttons-block {
+        margin-top: 1.2rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    &__hide {
+        display: none;
+    }
+}
