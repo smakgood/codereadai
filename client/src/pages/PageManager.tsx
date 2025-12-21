@@ -80,9 +80,10 @@ const PageManager: React.FC = () => {
                 }
                 
                 // Проверяем токен на сервере (валидация)
-                const user = await server.checkSession();
-                if (user) {
-                    store.setUser(user); // Обновляем данные
+                const sessionCheck = await server.checkSession();
+                if (sessionCheck.user) {
+                    // Токен валиден - обновляем данные
+                    store.setUser(sessionCheck.user);
                     
                     // Восстанавливаем страницу после валидации
                     if (savedPage && isPageAccessible(savedPage.page as PAGES, true)) {
@@ -90,11 +91,20 @@ const PageManager: React.FC = () => {
                     } else {
                         setPage(PAGES.TASKS);
                     }
-                } else {
-                    // Токен невалиден - очищаем
+                } else if (sessionCheck.isAuthError) {
+                    // Токен невалиден (ошибка авторизации) - очищаем
                     store.clearUser();
                     store.clearCurrentPage(); // Очищаем сохраненную страницу
                     setPage(PAGES.LOGIN);
+                } else {
+                    // Временная ошибка (сеть, сервер) - оставляем пользователя залогиненным
+                    // Используем сохраненные данные из localStorage
+                    if (!savedUser) {
+                        // Если не было сохраненных данных, переходим на LOGIN
+                        store.clearUser();
+                        setPage(PAGES.LOGIN);
+                    }
+                    // Иначе остаемся на текущей странице с сохраненными данными
                 }
             } else {
                 // Пользователь не авторизован
