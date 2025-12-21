@@ -65,6 +65,19 @@ class Server {
             this.store.clearUser();
         }
     }
+
+    /**
+     * Проверить валидность текущей сессии
+     * Возвращает данные пользователя если токен валиден, иначе null
+     */
+    async checkSession(): Promise<TUser | null> {
+        const token = this.store.getToken();
+        if (!token) {
+            return null;
+        }
+        // Запрос к серверу для проверки токена
+        return await this.request<TUser>('getCurrentUser');
+    }
     // async logout(): Promise<void> {
     //     const result = await this.request<boolean>('logout');
     //     if (result) {
@@ -152,10 +165,9 @@ class Server {
     }
 
     async getSubmissionReview(submissionId: number): Promise<TAIReview | null> {
-        const data = await this.request<{ review: TAIReview }>('getSubmissionReview', { 
+        return await this.request<TAIReview>('getSubmissionReview', { 
             submission_id: submissionId.toString() 
         });
-        return data ? data.review : null;
     }
 } 
 

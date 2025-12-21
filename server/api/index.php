@@ -18,6 +18,7 @@ function result($params) {
             case 'logout': return $app->logout($params);
             case 'registration': return $app->registration($params);
             case 'updateUserName': return $app->updateUserName($params);
+            case 'getCurrentUser': return $app->getCurrentUser($params);
             
             // tasks
             case 'getTasks': return $app->getTasks($params);
