@@ -125,22 +125,31 @@
   .search-input-wrapper {
     position: relative;
     max-width: 360px;
+    display: flex;
+    align-items: center;
   }
 
   .search-icon {
     position: absolute;
     left: 0.6rem;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 8.5px !important;
     color: #808082;
     pointer-events: none;
     width: 12px;
     height: 12px;
+    z-index: 1;
+    
+    svg {
+      width: 12px !important;
+      height: 12px !important;
+      display: block;
+    }
   }
 
   .search-input {
     width: 100%;
     font-size: 10px;
+    line-height: 1.4;
     height: 29px;
     border-radius: 5px;
     border: 1px solid #808082;
@@ -150,6 +159,7 @@
     outline: none;
     font-family: inherit;
     transition: all 0.2s ease;
+    box-sizing: border-box;
 
     &:focus {
       background: #FFFFFF;
@@ -243,6 +253,8 @@
     padding: 0.6rem;
     transition: all 0.2s ease;
     cursor: pointer;
+    overflow: hidden;
+    word-wrap: break-word;
 
     &:hover {
       border-color: #1D1D1D;
@@ -256,6 +268,8 @@
     justify-content: space-between;
     align-items: flex-start;
     margin-bottom: 0.36rem;
+    gap: 0.24rem;
+    min-width: 0;
   }
 
   .task-title {
@@ -265,6 +279,9 @@
     margin: 0;
     flex: 1;
     line-height: 1.4;
+    min-width: 0;
+    overflow-wrap: break-word;
+    word-break: break-word;
   }
 
   .task-id {
@@ -272,6 +289,8 @@
     color: #808082;
     font-weight: 500;
     margin-left: 0.24rem;
+    flex-shrink: 0;
+    white-space: nowrap;
   }
 
   .task-card-body {

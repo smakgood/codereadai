@@ -65,6 +65,39 @@ class Server {
             this.store.clearUser();
         }
     }
+
+    /**
+     * Проверить валидность текущей сессии
+     * Возвращает данные пользователя если токен валиден, иначе null
+     * Также возвращает null при ошибке авторизации (705), но не при других ошибках
+     */
+    async checkSession(): Promise<{ user: TUser | null; isAuthError: boolean }> {
+        const token = this.store.getToken();
+        if (!token) {
+            return { user: null, isAuthError: true };
+        }
+        try {
+            const params: { [key: string]: string } = {};
+            params.method = 'getCurrentUser';
+            params.token = token;
+            const response = await fetch(`${this.HOST}/?${Object.keys(params).map(key => `${key}=${params[key]}`).join('&')}`);
+            const answer: TAnswer<TUser> = await response.json();
+            if (answer.result === 'ok' && answer.data) {
+                return { user: answer.data, isAuthError: false };
+            }
+            // Если ошибка авторизации (705), это реальная проблема с токеном
+            if (answer.error && answer.error.code === 705) {
+                return { user: null, isAuthError: true };
+            }
+            // При других ошибках не считаем это проблемой авторизации
+            // (это может быть временная ошибка сети или сервера)
+            return { user: null, isAuthError: false };
+        } catch (e) {
+            console.log('checkSession error:', e);
+            // При ошибке сети не считаем это проблемой авторизации
+            return { user: null, isAuthError: false };
+        }
+    }
     // async logout(): Promise<void> {
     //     const result = await this.request<boolean>('logout');
     //     if (result) {
@@ -152,10 +185,9 @@ class Server {
     }
 
     async getSubmissionReview(submissionId: number): Promise<TAIReview | null> {
-        const data = await this.request<{ review: TAIReview }>('getSubmissionReview', { 
+        return await this.request<TAIReview>('getSubmissionReview', { 
             submission_id: submissionId.toString() 
         });
-        return data ? data.review : null;
     }
 } 
 

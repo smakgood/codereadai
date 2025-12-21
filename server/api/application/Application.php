@@ -39,6 +39,28 @@ class Application
         return ['error' => 242];
     }
 
+    /**
+     * Получить текущего пользователя по токену
+     * Используется для проверки валидности сессии при перезагрузке страницы
+     */
+    public function getCurrentUser($params)
+    {
+        if (isset($params['token']) && $params['token']) {
+            $user = $this->user->getUser($params['token']);
+            if ($user) {
+                return [
+                    'id' => (int)$user->id,
+                    'email' => $user->email,
+                    'name' => $user->name,
+                    'balance' => isset($user->balance) ? (int)$user->balance : 0,
+                    'token' => $params['token']
+                ];
+            }
+            return ['error' => 705]; // Не авторизован
+        }
+        return ['error' => 242]; // Параметры не указаны
+    }
+
     public function registration($params)
     {
 
