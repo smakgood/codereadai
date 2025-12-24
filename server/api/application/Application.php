@@ -213,7 +213,16 @@ class Application
         if (isset($aiResult['error'])) {
             // Ошибка AI API - обновляем статус на error
             $this->db->updateSubmissionStatus($submissionId, 'error');
+            // Логируем детали ошибки для отладки
+            error_log("AI Service error for submission {$submissionId}: " . $aiResult['error']);
             return ['error' => 9003, 'text' => "AI Service error: " . $aiResult['error']];
+        }
+        
+        // Проверяем, что результат содержит все необходимые поля
+        if (!isset($aiResult['score']) || !isset($aiResult['feedback'])) {
+            $this->db->updateSubmissionStatus($submissionId, 'error');
+            error_log("AI Service returned incomplete result for submission {$submissionId}: " . json_encode($aiResult));
+            return ['error' => 9003, 'text' => "AI Service returned incomplete result"];
         }
 
         // Сохранить результат в reviews

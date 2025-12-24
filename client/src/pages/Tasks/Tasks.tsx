@@ -60,6 +60,11 @@ const Tasks: React.FC<IBasePage> = ({ setPage }) => {
         return diff ? diff.label : difficulty;
     };
 
+    const handleLogout = async () => {
+        await server.logout();
+        setPage(PAGES.LOGIN);
+    };
+
     // Фильтрация задач по поисковому запросу (фильтр по сложности уже применен на сервере)
     const filteredTasks = tasks.filter((task: TTask) => {
         const matchesSearch = task.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -83,6 +88,18 @@ const Tasks: React.FC<IBasePage> = ({ setPage }) => {
                     </button>
                     <button className="icon-button" aria-label="Настройки">
                         <img src={SettingsIcon} alt="Настройки" />
+                    </button>
+                    <button 
+                        className="logout-button" 
+                        aria-label="Выход"
+                        onClick={handleLogout}
+                        title="Выйти из аккаунта"
+                    >
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                            <polyline points="16 17 21 12 16 7"></polyline>
+                            <line x1="21" y1="12" x2="9" y2="12"></line>
+                        </svg>
                     </button>
                 </div>
             </header>

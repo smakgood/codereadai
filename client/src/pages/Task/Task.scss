@@ -72,6 +72,34 @@
     width: 60px; /* Для симметрии с кнопкой */
   }
 
+  .logout-button-header {
+    background: #FFFFFF;
+    border: 1px solid #808082;
+    color: #1D1D1D;
+    cursor: pointer;
+    padding: 0.3rem;
+    border-radius: 4.8px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: #F5F5F5;
+      border-color: #DC3545;
+      color: #DC3545;
+    }
+
+    svg {
+      display: block;
+      width: 20px;
+      height: 20px;
+      stroke: currentColor;
+    }
+  }
+
   /* Main Content */
   .task-main {
     padding: 0.6rem 0.9rem;

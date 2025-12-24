@@ -155,7 +155,7 @@ class Server {
             if (token) {
                 params.token = token;
             }
-            const response = await fetch(`${this.HOST}/?${Object.keys(params).map(key => `${key}=${params[key]}`).join('&')}`);
+            const response = await fetch(`${this.HOST}/?${Object.keys(params).map(key => `${key}=${encodeURIComponent(params[key])}`).join('&')}`);
             const answer: TAnswer<TSubmissionResponse> = await response.json();
             if (answer.result === 'ok' && answer.data) {
                 return answer.data;
