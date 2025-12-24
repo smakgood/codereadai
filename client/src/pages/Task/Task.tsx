@@ -121,7 +121,7 @@ const Task: React.FC<ITaskPage> = ({ setPage, taskId }) => {
 
     return (
         <div className="task-page">
-            <TaskHeader title={task.title} onBackClick={handleBackClick} />
+            <TaskHeader title={task.title} onBackClick={handleBackClick} setPage={setPage} />
             <main className="task-main">
                 <div className="task-container">
                     <TaskInfoSection task={task} />

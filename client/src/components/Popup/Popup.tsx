@@ -22,15 +22,21 @@ export type TPopupData = {
 const Popup: React.FC = () => {
     const server = useContext(ServerContext);
     const [data, setData] = useState<TPopupData | null>(null);
+    const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
         const showErrorHandler = (error: TError) => {
             const { code, text } = error;
             setData({
-                title: `Ошибка №${code}`,
+                title: `#${code}`,
                 text,
             });
-            setTimeout(() => setData(null), 3000);
+            setIsVisible(true);
+            
+            setTimeout(() => {
+                setIsVisible(false);
+                setTimeout(() => setData(null), 300);
+            }, 3000);
         }
     
         server.showError(showErrorHandler);
@@ -40,7 +46,7 @@ const Popup: React.FC = () => {
 
     const { title, text, buttons = [] } = data;
 
-    return (<div className="popup">
+    return (<div className={`popup ${isVisible ? 'popup--visible' : 'popup--hidden'}`}>
         <div className={'popup-wrapper'}>
             <div className='popup-text-block'>
                 <div className="popup-title">{title}</div>

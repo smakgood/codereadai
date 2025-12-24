@@ -12,10 +12,8 @@ interface CodeEditorSectionProps {
 
 const THEMES: { [key: string]: { name: string, url: string } } = {
     'atom-one-dark': { name: 'Atom One Dark (Тёмная)', url: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css' },
-    'github': { name: 'GitHub (Светлая)', url: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css' },
     'monokai-sublime': { name: 'Monokai Sublime (Тёмная)', url: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/monokai-sublime.min.css' },
     'vs2015': { name: 'VS 2015 (Тёмная)', url: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css' },
-    'solarized-light': { name: 'Solarized Light (Светлая)', url: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/solarized-light.min.css' },
 };
 
 const CodeEditorSection: React.FC<CodeEditorSectionProps> = ({

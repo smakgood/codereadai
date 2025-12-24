@@ -42,7 +42,7 @@ const Login: React.FC<IBasePage> = (props) => {
 
         <section className="sign-card" role="form" aria-label="Форма входа">
           <div className="field">
-            <label className="label" htmlFor="email">Почта или никнейм</label>
+            <label className="label" htmlFor="email">Почта</label>
             <input
               ref={loginRef}
               className="input"
